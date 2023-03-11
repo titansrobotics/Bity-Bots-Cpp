@@ -3,15 +3,22 @@
 
 namespace OIConstants{
 
-constexpr int DriverJoystickId {0};
-constexpr int ArmJoystickId    {1};
+constexpr int driverJoystickId {0};
+constexpr int armJoystickId    {1};
 
 }
 
-namespace DriverMotorId{
+namespace MotorConstants{
 
-constexpr int LeftDriverMotorId  {1};
-constexpr int RightDriverMotorId {0};
+constexpr int leftDriverMotorId  {1};
+constexpr int rightDriverMotorId {3};
+
+constexpr int elevatorMotorId {8};
+
+constexpr int armMotorId {9};
+
+constexpr int leftClawMotorId {7};
+constexpr int rightClawMotorId {5};
 
 }
 

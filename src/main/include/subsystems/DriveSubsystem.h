@@ -1,17 +1,19 @@
 #ifndef DRIVE_SUBSYSTEM_H
 #define DRIVE_SUBSYSTEM_H
 
+#include <frc/Encoder.h>
 #include <frc/drive/DifferentialDrive.h>
 #include <ctre/phoenix/motorcontrol/can/VictorSPX.h>
+
 #include <frc2/command/SubsystemBase.h>
 
 #include "Constants.h"
 
 
-class DriveSubystem : public frc2::SubsystemBase{
+class DriveSubsystem : public frc2::SubsystemBase{
     public:
 
-    DriveSubystem();
+    DriveSubsystem();
 
     void Periodic() override;
 
@@ -25,6 +27,14 @@ class DriveSubystem : public frc2::SubsystemBase{
     frc::Encoder& GetRightEncoder();
 
     void SetMaxOutput(double maxOutput);
+
+    private:
+
+    ctre::phoenix::motorcontrol::can::VictorSPX leftMotors;
+    ctre::phoenix::motorcontrol::can::VictorSPX rightMotors;
+
+    frc::Encoder leftEncoder;
+    frc::Encoder rightEncoder;
 };
 
 #endif

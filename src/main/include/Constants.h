@@ -3,14 +3,14 @@
 
 #include <numbers>
 
-namespace OIConstants{
+namespace OIConstants {
 
 constexpr int driverJoystickId {0};
 constexpr int armJoystickId    {1};
 
 }
 
-namespace MotorConstants{
+namespace MotorConstants {
 
 constexpr int leftDriveId  {1};
 constexpr int rightDriveId {3};
@@ -24,15 +24,19 @@ constexpr int rightClawId {5};
 
 }
 
-namespace EncoderConstants{
+namespace EncoderConstants {
 
 constexpr int leftDriveId[2]  {0, 1};
 constexpr int rightDriveId[2] {2, 3};
+constexpr int armId[2]        {4, 5};
 
-constexpr double cpr      {2048};
-constexpr double diameter {6};
+constexpr double driveCountsPerRevolution {2048};
+constexpr double driveDiameter            {6};
+constexpr double driveDistancePerPulse    {driveDiameter*std::numbers::pi/driveCountsPerRevolution};
 //Assuming Encoder is on the shaft
-constexpr double distancePerPulse {diameter*std::numbers::pi/cpr};
+
+constexpr double armCountsPerRevolution {0};
+constexpr double armAnglePerPulse       {2*std::numbers::pi/armCountsPerRevolution};
 }
 
 #endif

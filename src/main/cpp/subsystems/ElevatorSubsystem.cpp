@@ -1,6 +1,7 @@
 #include "subsystems/ElevatorSubsystem.h"
 
-ElevatorSubsystem::ElevatorSubsystem() : elevatorMotor{MotorConstants::elevatorId, rev::CANSparkMax::MotorType::kBrushless} {};
+ElevatorSubsystem::ElevatorSubsystem() : 
+    elevatorMotor{MotorConstants::elevatorId, rev::CANSparkMax::MotorType::kBrushless} {}
 
 void ElevatorSubsystem::Periodic() {}
 

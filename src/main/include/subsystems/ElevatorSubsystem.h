@@ -2,12 +2,11 @@
 #define ELEVATOR_SUBSYSTEM_H
 
 #include <rev/CANSparkMax.h>
-#include <frc/Encoder.h>
 #include <frc2/command/SubsystemBase.h>
 
 #include "Constants.h"
 
-class ElevatorSubsystem : public frc2::SubsystemBase{
+class ElevatorSubsystem : public frc2::SubsystemBase {
     public:
 
     ElevatorSubsystem();

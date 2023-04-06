@@ -1,39 +1,37 @@
 #include "subsystems/DriveSubsystem.h"
 
 DriveSubsystem::DriveSubsystem() : 
-    leftMotors{MotorConstants::leftDriveId},
-    rightMotors{MotorConstants::rightDriveId},
-    leftEncoder{EncoderConstants::leftDriveId[0], EncoderConstants::leftDriveId[1]},
-    rightEncoder{EncoderConstants::rightDriveId[0], EncoderConstants::rightDriveId[1]} {
+    leftDriveMotors   {MotorConstants::leftDriveId},
+    rightDriveMotors  {MotorConstants::rightDriveId},
+    leftDriveEncoder  {EncoderConstants::leftDriveId[0], EncoderConstants::leftDriveId[1]},
+    rightDriveEncoder {EncoderConstants::rightDriveId[0], EncoderConstants::rightDriveId[1]} {
 
-        rightMotors.SetInverted(true);
+        rightDriveMotors.SetInverted(true);
 
-        leftEncoder.SetDistancePerPulse(EncoderConstants::distancePerPulse);
-        rightEncoder.SetDistancePerPulse(EncoderConstants::distancePerPulse);
+        leftDriveEncoder.SetDistancePerPulse(EncoderConstants::driveDistancePerPulse);
+        rightDriveEncoder.SetDistancePerPulse(EncoderConstants::driveDistancePerPulse);
 }
 
 void DriveSubsystem::Periodic() {}
 
 void DriveSubsystem::ArcadeDrive(double fwd, double rot){
-    leftMotors.Set(ctre::phoenix::motorcontrol::VictorSPXControlMode::PercentOutput, fwd + rot);
-    rightMotors.Set(ctre::phoenix::motorcontrol::VictorSPXControlMode::PercentOutput, fwd - rot);
+    leftDriveMotors.Set(ctre::phoenix::motorcontrol::VictorSPXControlMode::PercentOutput, fwd + rot);
+    rightDriveMotors.Set(ctre::phoenix::motorcontrol::VictorSPXControlMode::PercentOutput, fwd - rot);
 }
 
 void DriveSubsystem::ResetEncoders() {
-    leftEncoder.Reset();
-    rightEncoder.Reset();
+    leftDriveEncoder.Reset();
+    rightDriveEncoder.Reset();
 }
 
 double DriveSubsystem::GetAverageEncoderDistance() {
-    return (leftEncoder.GetDistance() + rightEncoder.GetDistance()) / 2.0;
+    return (leftDriveEncoder.GetDistance() + rightDriveEncoder.GetDistance()) / 2.0;
 }
 
 frc::Encoder& DriveSubsystem::GetLeftEncoder() {
-    return leftEncoder;
+    return leftDriveEncoder;
 }
 
 frc::Encoder& DriveSubsystem::GetRightEncoder() {
-    return rightEncoder;
+    return rightDriveEncoder;
 }
-
-// void DriveSubsystem::SetMaxOutput(double maxOutput) {}

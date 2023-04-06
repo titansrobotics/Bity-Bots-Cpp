@@ -4,7 +4,6 @@
 #include <frc/Encoder.h>
 #include <frc/drive/DifferentialDrive.h>
 #include <ctre/phoenix/motorcontrol/can/VictorSPX.h>
-
 #include <frc2/command/SubsystemBase.h>
 
 #include "Constants.h"
@@ -26,7 +25,8 @@ class DriveSubsystem : public frc2::SubsystemBase{
     frc::Encoder& GetLeftEncoder();
     frc::Encoder& GetRightEncoder();
 
-    void SetMaxOutput(double maxOutput);
+    // void SetMaxOutput(double maxOutput);
+
 
     private:
 

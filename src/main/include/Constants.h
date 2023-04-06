@@ -29,10 +29,10 @@ namespace EncoderConstants{
 constexpr int leftDriveId[2]  {0, 1};
 constexpr int rightDriveId[2] {2, 3};
 
-constexpr double cpr {2048};
+constexpr double cpr      {2048};
 constexpr double diameter {6};
 //Assuming Encoder is on the shaft
-constexpr double distancePerPulse{diameter*std::numbers::pi/cpr};
+constexpr double distancePerPulse {diameter*std::numbers::pi/cpr};
 }
 
 #endif

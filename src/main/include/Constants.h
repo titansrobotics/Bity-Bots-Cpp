@@ -21,14 +21,14 @@ constexpr double distancePerPulse    {wheelDiameter*std::numbers::pi/countsPerRe
 
 namespace ElevatorConstants {
 
-constexpr int elevatorId {8};
+constexpr int motorId {8};
 
 }
 
 
 namespace ArmConstants {
 
-constexpr int armId {9};
+constexpr int motorId {9};
 
 constexpr int encoderId[2] {4, 5};
 

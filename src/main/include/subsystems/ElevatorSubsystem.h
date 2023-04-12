@@ -18,7 +18,7 @@ class ElevatorSubsystem : public frc2::SubsystemBase {
 
     private:
 
-    rev::CANSparkMax elevatorMotor;
+    rev::CANSparkMax motors;
 };
 
 #endif

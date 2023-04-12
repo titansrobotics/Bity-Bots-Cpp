@@ -1,25 +1,25 @@
 #include "subsystems/ArmSubsystem.h"
 
 ArmSubsystem::ArmSubsystem() :
-    armMotor   {MotorConstants::armId, rev::CANSparkMax::MotorType::kBrushless},
-    armEncoder {EncoderConstants::armId[0], EncoderConstants::armId[1]} {
-        armEncoder.SetDistancePerPulse(EncoderConstants::armAnglePerPulse);
+    motor   {ArmConstants::motorId, rev::CANSparkMax::MotorType::kBrushless},
+    encoder {ArmConstants::encoderId[0], ArmConstants::encoderId[1]} {
+        encoder.SetDistancePerPulse(ArmConstants::anglePerPulse);
 }
 
 void ArmSubsystem::Periodic() {}
 
 void ArmSubsystem::RaiseArm(double speed) {
-    armMotor.Set(speed);
+    motor.Set(speed);
 }
 
 void ArmSubsystem::ResetEncoder() {
-    armEncoder.Reset();
+    encoder.Reset();
 }
 
 double ArmSubsystem::GetEncoderDistance() {
-    return armEncoder.GetDistance();
+    return encoder.GetDistance();
 }
 
 frc::Encoder& ArmSubsystem::GetEncoder() {
-    return armEncoder;
+    return encoder;
 }

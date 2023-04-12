@@ -25,9 +25,9 @@ class ArmSubsystem : public frc2::SubsystemBase {
 
     private:
 
-    rev::CANSparkMax armMotor;
+    rev::CANSparkMax motor;
 
-    frc::Encoder armEncoder;
+    frc::Encoder encoder;
 };
 
 #endif

@@ -3,40 +3,54 @@
 
 #include <numbers>
 
+namespace DriveConstants {
+
+constexpr int leftMotorId  {1};
+constexpr int rightMotorId {3};
+
+constexpr int leftEncoderId[2]  {0, 1};
+constexpr int rightEncoderId[2] {2, 3};
+
+constexpr double countsPerRevolution {2048};
+constexpr double wheelDiameter       {6};
+constexpr double distancePerPulse    {wheelDiameter*std::numbers::pi/countsPerRevolution};
+//Assuming Encoder is on the shaft
+
+}
+
+
+namespace ElevatorConstants {
+
+constexpr int elevatorId {8};
+
+}
+
+
+namespace ArmConstants {
+
+constexpr int armId {9};
+
+constexpr int encoderId[2] {4, 5};
+
+constexpr double countsPerRevolution {1};
+constexpr double anglePerPulse       {2*std::numbers::pi/countsPerRevolution};
+
+}
+
+
+namespace ClawConstants {
+
+constexpr int leftMotorId  {7};
+constexpr int rightMotorId {5};
+
+}
+
+
 namespace OIConstants {
 
 constexpr int driverJoystickId {0};
 constexpr int armJoystickId    {1};
 
-}
-
-namespace MotorConstants {
-
-constexpr int leftDriveId  {1};
-constexpr int rightDriveId {3};
-
-constexpr int elevatorId {8};
-
-constexpr int armId {9};
-
-constexpr int leftClawId  {7};
-constexpr int rightClawId {5};
-
-}
-
-namespace EncoderConstants {
-
-constexpr int leftDriveId[2]  {0, 1};
-constexpr int rightDriveId[2] {2, 3};
-constexpr int armId[2]        {4, 5};
-
-constexpr double driveCountsPerRevolution {2048};
-constexpr double driveDiameter            {6};
-constexpr double driveDistancePerPulse    {driveDiameter*std::numbers::pi/driveCountsPerRevolution};
-//Assuming Encoder is on the shaft
-
-constexpr double armCountsPerRevolution {0};
-constexpr double armAnglePerPulse       {2*std::numbers::pi/armCountsPerRevolution};
 }
 
 #endif

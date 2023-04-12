@@ -1,15 +1,15 @@
 #include "subsystems/DriveSubsystem.h"
 
 DriveSubsystem::DriveSubsystem() : 
-    leftDriveMotors   {MotorConstants::leftDriveId},
-    rightDriveMotors  {MotorConstants::rightDriveId},
-    leftDriveEncoder  {EncoderConstants::leftDriveId[0], EncoderConstants::leftDriveId[1]},
-    rightDriveEncoder {EncoderConstants::rightDriveId[0], EncoderConstants::rightDriveId[1]} {
+    leftDriveMotors   {DriveConstants::leftMotorId},
+    rightDriveMotors  {DriveConstants::rightMotorId},
+    leftDriveEncoder  {DriveConstants::leftEncoderId[0], DriveConstants::leftEncoderId[1]},
+    rightDriveEncoder {DriveConstants::rightEncoderId[0], DriveConstants::rightEncoderId[1]} {
 
         rightDriveMotors.SetInverted(true);
 
-        leftDriveEncoder.SetDistancePerPulse(EncoderConstants::driveDistancePerPulse);
-        rightDriveEncoder.SetDistancePerPulse(EncoderConstants::driveDistancePerPulse);
+        leftDriveEncoder.SetDistancePerPulse(DriveConstants::distancePerPulse);
+        rightDriveEncoder.SetDistancePerPulse(DriveConstants::distancePerPulse);
 }
 
 void DriveSubsystem::Periodic() {}

@@ -64,7 +64,7 @@ namespace OIConstants {
 
 constexpr int driverJoystickId    {0};
 constexpr int driveForwardAxisId  {1};
-constexpr int driveRotationAxisId {2};
+constexpr int driveRotationAxisId {4};
 
 constexpr int armJoystickId   {1};
 constexpr int armAxisId       {1};

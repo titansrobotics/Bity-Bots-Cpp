@@ -13,7 +13,7 @@ RobotContainer::RobotContainer() {
   drive.SetDefaultCommand(frc2::cmd::Run(
     [this] {
         drive.ArcadeDrive(
-        driverController.GetRawAxis(OIConstants::driveForwardAxisId) * SpeedConstants::driveForwardPercentage,
+        -driverController.GetRawAxis(OIConstants::driveForwardAxisId) * SpeedConstants::driveForwardPercentage,
         driverController.GetRawAxis(OIConstants::driveRotationAxisId) * SpeedConstants::driveRotationPercentage);
     },
     {&drive}));

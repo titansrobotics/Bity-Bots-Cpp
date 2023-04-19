@@ -1,7 +1,7 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#include <numbers>
+#define M_PI 3.14159265358979323846
 
 namespace DriveConstants {
 
@@ -13,7 +13,7 @@ constexpr int rightEncoderId[2] {2, 3};
 
 constexpr double countsPerRevolution {2048};
 constexpr double wheelDiameter       {6};
-constexpr double distancePerPulse    {wheelDiameter*std::numbers::pi/countsPerRevolution};
+constexpr double distancePerPulse    {wheelDiameter*M_PI/countsPerRevolution};
 //Assuming Encoder is on the shaft
 
 }
@@ -33,7 +33,7 @@ constexpr int motorId {9};
 constexpr int encoderId[2] {4, 5};
 
 constexpr double countsPerRevolution {1};
-constexpr double anglePerPulse       {2*std::numbers::pi/countsPerRevolution};
+constexpr double anglePerPulse       {2*M_PI/countsPerRevolution};
 
 }
 
@@ -48,14 +48,14 @@ constexpr int rightMotorId {5};
 
 namespace SpeedConstants {
 
-constexpr int driveForwardPercentage  {0.6};
-constexpr int driveRotationPercentage {0.3};
+constexpr double driveForwardPercentage  {0.6};
+constexpr double driveRotationPercentage {0.3};
 
-constexpr int armPercentage {0.5};
+constexpr double armPercentage {0.5};
 
-constexpr int elevatorPercentage {0.3};
+constexpr double elevatorPercentage {0.3};
 
-constexpr int clawPercentage {0.3};
+constexpr double clawPercentage {0.3};
 
 }
 

@@ -46,10 +46,32 @@ constexpr int rightMotorId {5};
 }
 
 
+namespace SpeedConstants {
+
+constexpr int driveForwardPercentage  {0.6};
+constexpr int driveRotationPercentage {0.3};
+
+constexpr int armPercentage {0.5};
+
+constexpr int elevatorPercentage {0.3};
+
+constexpr int clawPercentage {0.3};
+
+}
+
+
 namespace OIConstants {
 
-constexpr int driverJoystickId {0};
-constexpr int armJoystickId    {1};
+constexpr int driverJoystickId    {0};
+constexpr int driveForwardAxisId  {1};
+constexpr int driveRotationAxisId {2};
+
+constexpr int armJoystickId   {1};
+constexpr int armAxisId       {1};
+constexpr int elevatorRaiseId {5};
+constexpr int elevatorLowerId {3};
+constexpr int clawGrabId      {1};
+constexpr int clawEjectId     {2};
 
 }
 

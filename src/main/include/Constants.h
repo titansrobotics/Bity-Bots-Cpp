@@ -5,74 +5,75 @@
 
 namespace DriveConstants {
 
-constexpr int leftMotorId  {1};
-constexpr int rightMotorId {3};
+    constexpr int kLeftMotorId  {1};
+    constexpr int kRightMotorId {3};
 
-constexpr int leftEncoderId[2]  {0, 1};
-constexpr int rightEncoderId[2] {2, 3};
+    constexpr int kLeftEncoderId[2]  {0, 1};
+    constexpr int kRightEncoderId[2] {2, 3};
 
-constexpr double countsPerRevolution {2048};
-constexpr double wheelDiameter       {6};
-constexpr double distancePerPulse    {wheelDiameter*std::numbers::pi/countsPerRevolution};
-//Assuming Encoder is on the shaft
+    constexpr double kCountsPerRevolution {2048};
+    constexpr double kWheelDiameter       {6};
+    constexpr double kDistancePerPulse    {kWheelDiameter*std::numbers::pi/kCountsPerRevolution};
+    //Assuming the encoder is mounted directly on the wheel shaft
 
 }
 
 
 namespace ElevatorConstants {
 
-constexpr int motorId {8};
+    constexpr int kMotorId {8};
 
 }
 
 
 namespace ArmConstants {
 
-constexpr int motorId {9};
+    constexpr int kMotorId {9};
 
-constexpr int encoderId[2] {4, 5};
+    constexpr int kEncoderId[2] {4, 5};
 
-constexpr double countsPerRevolution {1};
-constexpr double anglePerPulse       {2*std::numbers::pi/countsPerRevolution};
+    constexpr double kCountsPerRevolution {1};
+    constexpr double kAnglePerPulse       {2*std::numbers::pi/kCountsPerRevolution};
 
 }
 
 
 namespace ClawConstants {
 
-constexpr int leftMotorId  {7};
-constexpr int rightMotorId {5};
+    constexpr int kLeftMotorId  {7};
+    constexpr int kRightMotorId {5};
 
 }
 
 
 namespace SpeedConstants {
 
-constexpr int driveForwardPercentage  {0.6};
-constexpr int driveRotationPercentage {0.3};
+    constexpr int kDriveForwardPercentage  {0.6};
+    constexpr int kDriveRotationPercentage {0.3};
 
-constexpr int armPercentage {0.5};
+    constexpr int kArmPercentage {0.5};
 
-constexpr int elevatorPercentage {0.3};
+    constexpr int kElevatorPercentage {0.3};
 
-constexpr int clawPercentage {0.3};
+    constexpr int kClawPercentage {0.3};
 
 }
 
 
 namespace OIConstants {
+    
+    constexpr int kDriverJoystickId    {0}; //console controller
+    constexpr int kDriveForwardAxisId  {1};
+    constexpr int kDriveRotationAxisId {2};
 
-constexpr int driverJoystickId    {0};
-constexpr int driveForwardAxisId  {1};
-constexpr int driveRotationAxisId {2};
-
-constexpr int armJoystickId   {1};
-constexpr int armAxisId       {1};
-constexpr int elevatorRaiseId {5};
-constexpr int elevatorLowerId {3};
-constexpr int clawGrabId      {1};
-constexpr int clawEjectId     {2};
+    constexpr int kArmJoystickId   {1}; //flight stick
+    constexpr int kArmAxisId       {1};
+    constexpr int kElevatorRaiseId {5};
+    constexpr int kElevatorLowerId {3};
+    constexpr int kClawGrabId      {1};
+    constexpr int kClawEjectId     {2};
 
 }
+
 
 #endif

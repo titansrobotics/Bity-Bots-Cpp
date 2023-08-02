@@ -10,38 +10,38 @@ RobotContainer::RobotContainer() {
   ConfigureBindings();
 
 
-  drive.SetDefaultCommand(frc2::cmd::Run(
+  m_drive.SetDefaultCommand(frc2::cmd::Run(
     [this] {
-        drive.ArcadeDrive(
-        driverController.GetRawAxis(OIConstants::driveForwardAxisId) * SpeedConstants::driveForwardPercentage,
-        driverController.GetRawAxis(OIConstants::driveRotationAxisId) * SpeedConstants::driveRotationPercentage);
+        m_drive.ArcadeDrive(
+        m_driverController.GetRawAxis(OIConstants::kDriveForwardAxisId) * SpeedConstants::kDriveForwardPercentage,
+        m_driverController.GetRawAxis(OIConstants::kDriveRotationAxisId) * SpeedConstants::kDriveRotationPercentage);
     },
-    {&drive}));
+    {&m_drive}));
 
   
-  arm.SetDefaultCommand(frc2::cmd::Run(
+  m_arm.SetDefaultCommand(frc2::cmd::Run(
     [this] {
-        arm.RaiseArm(armController.GetRawAxis(OIConstants::armAxisId) * SpeedConstants::armPercentage);
+        m_arm.RaiseArm(m_armController.GetRawAxis(OIConstants::kArmAxisId) * SpeedConstants::kArmPercentage);
     },
-    {&arm}));
+    {&m_arm}));
 }
 
 void RobotContainer::ConfigureBindings() {
-    elevatorRaiseButton
-    .OnTrue(frc2::cmd::RunOnce([this] { elevator.LiftElevator(SpeedConstants::elevatorPercentage); }, {}))
-    .OnFalse(frc2::cmd::RunOnce([this] { elevator.LiftElevator(0); }, {}));
+    m_elevatorRaiseButton
+    .OnTrue(frc2::cmd::RunOnce([this] { m_elevator.LiftElevator(SpeedConstants::kElevatorPercentage); }, {}))
+    .OnFalse(frc2::cmd::RunOnce([this] { m_elevator.LiftElevator(0); }, {}));
 
-    elevatorLowerButton
-    .OnTrue(frc2::cmd::RunOnce([this] { elevator.LiftElevator(-SpeedConstants::elevatorPercentage); }, {}))
-    .OnFalse(frc2::cmd::RunOnce([this] { elevator.LiftElevator(0); }, {}));
+    m_elevatorLowerButton
+    .OnTrue(frc2::cmd::RunOnce([this] { m_elevator.LiftElevator(-SpeedConstants::kElevatorPercentage); }, {}))
+    .OnFalse(frc2::cmd::RunOnce([this] { m_elevator.LiftElevator(0); }, {}));
 
-    clawGrabButton
-    .OnTrue(frc2::cmd::RunOnce([this] { claw.MoveClaw(SpeedConstants::clawPercentage); }, {}))
-    .OnFalse(frc2::cmd::RunOnce([this] { claw.MoveClaw(0); }, {}));
+    m_clawGrabButton
+    .OnTrue(frc2::cmd::RunOnce([this] { m_claw.MoveClaw(SpeedConstants::kClawPercentage); }, {}))
+    .OnFalse(frc2::cmd::RunOnce([this] { m_claw.MoveClaw(0); }, {}));
 
-    clawEjectButton
-    .OnTrue(frc2::cmd::RunOnce([this] { claw.MoveClaw(-SpeedConstants::clawPercentage); }, {}))
-    .OnFalse(frc2::cmd::RunOnce([this] { claw.MoveClaw(0); }, {}));
+    m_clawEjectButton
+    .OnTrue(frc2::cmd::RunOnce([this] { m_claw.MoveClaw(-SpeedConstants::kClawPercentage); }, {}))
+    .OnFalse(frc2::cmd::RunOnce([this] { m_claw.MoveClaw(0); }, {}));
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand() {

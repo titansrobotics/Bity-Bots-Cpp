@@ -18,8 +18,8 @@ class ClawSubsystem : public frc2::SubsystemBase {
     
     private:
 
-    rev::CANSparkMax leftMotor;
-    rev::CANSparkMax rightMotor;
+    rev::CANSparkMax m_leftMotor;
+    rev::CANSparkMax m_rightMotor;
 };
 
 #endif

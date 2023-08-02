@@ -27,11 +27,11 @@ class DriveSubsystem : public frc2::SubsystemBase {
 
     private:
 
-    ctre::phoenix::motorcontrol::can::VictorSPX leftMotors;
-    ctre::phoenix::motorcontrol::can::VictorSPX rightMotors;
+    ctre::phoenix::motorcontrol::can::VictorSPX m_leftMotors;
+    ctre::phoenix::motorcontrol::can::VictorSPX m_rightMotors;
 
-    frc::Encoder leftEncoder;
-    frc::Encoder rightEncoder;
+    frc::Encoder m_leftEncoder;
+    frc::Encoder m_rightEncoder;
 };
 
 #endif

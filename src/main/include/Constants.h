@@ -1,6 +1,10 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+
+constexpr double kPI = 3.14159265358979323846;
+
+
 namespace DriveConstants {
 
     constexpr int kLeftMotorId  {1};
@@ -11,7 +15,7 @@ namespace DriveConstants {
 
     constexpr double kCountsPerRevolution {2048};
     constexpr double kWheelDiameter       {6};
-    constexpr double kDistancePerPulse    {kWheelDiameter*std::numbers::pi/kCountsPerRevolution};
+    constexpr double kDistancePerPulse    {kWheelDiameter*kPI/kCountsPerRevolution};
     //Assuming the encoder is mounted directly on the wheel shaft
 
 }
@@ -31,7 +35,7 @@ namespace ArmConstants {
     constexpr int kEncoderId[2] {4, 5};
 
     constexpr double kCountsPerRevolution {1};
-    constexpr double kAnglePerPulse       {2*std::numbers::pi/kCountsPerRevolution};
+    constexpr double kAnglePerPulse       {2*kPI/kCountsPerRevolution};
 
 }
 

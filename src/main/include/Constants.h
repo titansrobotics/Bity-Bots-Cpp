@@ -48,7 +48,7 @@ constexpr int rightMotorId {5};
 
 namespace SpeedConstants {
 
-constexpr double driveForwardPercentage  {0.6};
+constexpr double driveForwardPercentage  {0.25};
 constexpr double driveRotationPercentage {0.3};
 
 constexpr double armPercentage {0.5};

@@ -1,15 +1,15 @@
 #include "subsystems/ClawSubsystem.h"
 
 ClawSubsystem::ClawSubsystem() :
-    leftMotor{ClawConstants::leftMotorId, rev::CANSparkMax::MotorType::kBrushless},
-    rightMotor{ClawConstants::rightMotorId, rev::CANSparkMax::MotorType::kBrushless} {
+    m_leftMotor{ClawConstants::kLeftMotorId, rev::CANSparkMax::MotorType::kBrushless},
+    m_rightMotor{ClawConstants::kRightMotorId, rev::CANSparkMax::MotorType::kBrushless} {
         
-        rightMotor.SetInverted(true);
+        m_rightMotor.SetInverted(true);
 }
 
 void ClawSubsystem::Periodic() {}
 
 void ClawSubsystem::MoveClaw(double speed) {
-    leftMotor.Set(speed);
-    rightMotor.Set(speed);
+    m_leftMotor.Set(speed);
+    m_rightMotor.Set(speed);
 }

@@ -18,30 +18,32 @@
 #include "subsystems/ElevatorSubsystem.h"
 
 class RobotContainer {
- public:
- RobotContainer();
+    public:
+    RobotContainer();
 
- frc2::CommandPtr GetAutonomousCommand();
+    frc2::CommandPtr GetAutonomousCommand();
 
- private:
+    private:
+    frc::Joystick m_driverController {OIConstants::kDriverJoystickId};
+    frc::Joystick m_armController    {OIConstants::kArmJoystickId};
 
- frc::Joystick driverController {OIConstants::driverJoystickId};
- frc::Joystick armController    {OIConstants::armJoystickId};
+    frc2::JoystickButton m_elevatorRaiseButton {&m_armController, OIConstants::kElevatorRaiseId};
+    frc2::JoystickButton m_elevatorLowerButton {&m_armController, OIConstants::kElevatorLowerId};
+    frc2::JoystickButton m_clawGrabButton      {&m_armController, OIConstants::kClawGrabId};
+    frc2::JoystickButton m_clawEjectButton     {&m_armController, OIConstants::kClawEjectId};
+    
+    ArmSubsystem m_arm;
+    ClawSubsystem m_claw;
+    DriveSubsystem m_drive;
+    ElevatorSubsystem m_elevator;
 
- frc2::JoystickButton elevatorRaiseButton {&armController, OIConstants::elevatorRaiseId};
- frc2::JoystickButton elevatorLowerButton {&armController, OIConstants::elevatorLowerId};
- frc2::JoystickButton clawGrabButton      {&armController, OIConstants::clawGrabId};
- frc2::JoystickButton clawEjectButton     {&armController, OIConstants::clawEjectId};
+    //setup autos before adding auto selector
+    //frc2::CommandPtr m_simpleAuto = autos::SimpleAuto(&m_drive);
+    //frc2::CommandPtr m_complexAuto = autos::ComplexAuto(&m_drive, &m_hatch);
 
- ArmSubsystem arm;
- ClawSubsystem claw;
- DriveSubsystem drive;
- ElevatorSubsystem elevator;
-
- //setup autos before adding auto selector
- //Use sendable chooser to get selected auto
+    //frc::SendableChooser<frc2::Command*> m_chooser;
  
- void ConfigureBindings();
+    void ConfigureBindings();
 };
 
 #endif

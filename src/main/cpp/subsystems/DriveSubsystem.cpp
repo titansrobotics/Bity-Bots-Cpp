@@ -6,7 +6,7 @@ DriveSubsystem::DriveSubsystem() :
     m_leftEncoder  {DriveConstants::kLeftEncoderId[0], DriveConstants::kLeftEncoderId[1]},
     m_rightEncoder {DriveConstants::kRightEncoderId[0], DriveConstants::kRightEncoderId[1]} {
 
-        m_rightMotors.SetInverted(true);
+        m_leftMotors.SetInverted(true);
 
         m_leftEncoder.SetDistancePerPulse(DriveConstants::kDistancePerPulse);
         m_rightEncoder.SetDistancePerPulse(DriveConstants::kDistancePerPulse);
@@ -15,8 +15,8 @@ DriveSubsystem::DriveSubsystem() :
 void DriveSubsystem::Periodic() {}
 
 void DriveSubsystem::ArcadeDrive(double fwd, double rot){
-    m_leftMotors.Set(ctre::phoenix::motorcontrol::VictorSPXControlMode::PercentOutput, fwd + rot);
-    m_rightMotors.Set(ctre::phoenix::motorcontrol::VictorSPXControlMode::PercentOutput, fwd - rot);
+    m_leftMotors.Set(ctre::phoenix::motorcontrol::VictorSPXControlMode::PercentOutput, fwd - rot);
+    m_rightMotors.Set(ctre::phoenix::motorcontrol::VictorSPXControlMode::PercentOutput, fwd + rot);
 }
 
 void DriveSubsystem::ResetEncoders() {

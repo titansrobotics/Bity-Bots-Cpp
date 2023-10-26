@@ -66,7 +66,7 @@ namespace OIConstants {
     
     constexpr int kDriverJoystickId    {0}; //console controller
     constexpr int kDriveForwardAxisId  {1};
-    constexpr int kDriveRotationAxisId {2};
+    constexpr int kDriveRotationAxisId {4};
 
     constexpr int kArmJoystickId   {1}; //flight stick
     constexpr int kArmAxisId       {1};
